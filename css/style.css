@@ -1067,3 +1067,15 @@ h1 em, h2 em, .hero-titel em { font-style: italic; color: var(--bordeaux); }
 .weitere summary:hover { color: var(--bordeaux); }
 .weitere details > *:not(summary) { max-width: 760px; }
 .weitere details[open] { padding-bottom: 10px; }
+
+/* Nachtrag: Kontakt-Buttons gleich hoch, sticky nicht abgeschnitten */
+.btn-wa { border-width: 2px; }
+.sticky-kontakt { right: 28px; bottom: 28px; }
+.sticky-kontakt a { border: 1.5px solid transparent; }
+.sticky-kontakt .btn-wa { border-color: #dcc8b6; }
+@media (max-width: 720px) {
+  .sticky-kontakt { right: 0; bottom: 0; }
+  /* Platz für die Leiste unten, damit nichts verdeckt wird */
+  body { padding-bottom: calc(66px + env(safe-area-inset-bottom)); }
+  .footer { padding-bottom: 40px; }
+}
