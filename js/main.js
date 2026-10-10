@@ -35,3 +35,30 @@ var MAIL_BETREFF = 'Website-Analyse pavithranovak.net';
     });
   });
 })();
+
+// Einblenden beim Scrollen
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('sichtbar'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        en.target.classList.add('sichtbar');
+        io.unobserve(en.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  els.forEach(function (el) { io.observe(el); });
+
+  // sticky Buttons ausblenden wenn Kontakt-Bereich zu sehen ist
+  var sticky = document.getElementById('sticky');
+  var kontakt = document.getElementById('kontakt');
+  if (sticky && kontakt) {
+    new IntersectionObserver(function (entries) {
+      sticky.classList.toggle('weg', entries[0].isIntersecting);
+    }, { threshold: 0.15 }).observe(kontakt);
+  }
+})();

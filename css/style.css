@@ -484,3 +484,26 @@ a:focus-visible, button:focus-visible {
   transform: translateY(20px);
   pointer-events: none;
 }
+
+/* Scroll Animation - nur wenn JS an */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.js .reveal.sichtbar {
+  opacity: 1;
+  transform: none;
+}
+.js .gut-liste .reveal:nth-child(2n) { transition-delay: .08s; }
+.js .kacheln .reveal:nth-child(3n+2) { transition-delay: .08s; }
+.js .kacheln .reveal:nth-child(3n) { transition-delay: .16s; }
+
+.js .balken-wert { width: 0; transition: width 1.4s ease .3s; }
+.js .sichtbar .balken-wert { width: var(--wert); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .js .balken-wert { width: var(--wert); transition: none; }
+}
