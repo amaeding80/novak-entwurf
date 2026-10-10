@@ -507,3 +507,93 @@ a:focus-visible, button:focus-visible {
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .js .balken-wert { width: var(--wert); transition: none; }
 }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr 1fr; gap: 24px; padding: 48px 28px; }
+  .hero-titel { font-size: 2rem; }
+  .demo-nav { padding: 18px 28px; }
+  .demo-menu { gap: 16px; font-size: .85rem; }
+  .kacheln { grid-template-columns: repeat(2, 1fr); }
+  .demo-kacheln { padding: 28px; }
+}
+
+/* ---------- Handy ---------- */
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  .wrap { padding: 0 18px; }
+  .hide-sm { display: none; }
+  .topnav a { margin-left: 14px; font-size: .88rem; }
+
+  .intro { padding: 54px 0 46px; }
+  .lead { font-size: 1.12rem; }
+  .abschnitt { padding: 56px 0; }
+
+  .gut-liste { grid-template-columns: 1fr; }
+
+  .punkt {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 22px 18px 10px;
+  }
+  .punkt-nr { width: 38px; height: 38px; font-size: 1.1rem; }
+
+  .kacheln { grid-template-columns: 1fr; gap: 14px; }
+
+  .demo-menu { display: none; }
+  .demo-burger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 40px; height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  .demo-burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--bordeaux);
+  }
+  .demo-nav { padding: 14px 18px; }
+  .demo-logo-name { font-size: 1.15rem; }
+
+  /* Hero - auf Handy Bild drunter */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 34px 18px 30px;
+  }
+  .hero-titel { font-size: 1.75rem; }
+  .hero-btns .btn { flex: 1 1 auto; }
+  .hero-bild { min-height: 0; padding-top: 10px; }
+  .bogen { width: 62%; }
+  .kreis-1 { width: 90px; height: 90px; }
+
+  .demo-kacheln { grid-template-columns: 1fr; padding: 22px 18px 28px; }
+
+  .kontakt-btns .btn { width: 100%; }
+
+  /* sticky als Leiste unten */
+  .sticky-kontakt {
+    left: 0; right: 0; bottom: 0;
+    flex-direction: row;
+    gap: 0;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    background: rgba(255,255,255,.96);
+    border-top: 1px solid var(--linie);
+  }
+  .sticky-kontakt a {
+    flex: 1;
+    justify-content: center;
+    margin: 0 4px;
+    box-shadow: none;
+    padding: 11px 10px;
+  }
+  .footer { padding-bottom: 100px; }
+}
