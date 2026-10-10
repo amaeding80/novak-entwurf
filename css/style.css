@@ -953,3 +953,11 @@ h1 em, h2 em, .hero-titel em { font-style: italic; color: var(--bordeaux); }
   h1 { font-size: 2rem; }
   .hero-trust span { font-size: .78rem; }
 }
+
+/* Nachtrag: Kopfzeile bei 320px zweizeilig */
+.topbar-titel, .topnav a { white-space: nowrap; }
+@media (max-width: 360px) {
+  .topbar-titel { font-size: .85rem; }
+  .topnav a { margin-left: 8px; font-size: .78rem; }
+  .wrap { padding: 0 14px; }
+}
