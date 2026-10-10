@@ -407,6 +407,33 @@ a:hover { color: var(--bordeaux-dunkel); }
   text-align: center;
 }
 
+/* Kurs-Kacheln im Beispiel (nachträglich) */
+.demo-datum {
+  display: inline-block;
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  background: var(--rose);
+  padding: 2px 9px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.demo-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--bordeaux);
+}
+.demo-warteliste {
+  margin: 0;
+  padding: 0 40px 30px;
+  font-size: .85rem;
+  color: var(--grau);
+}
+.hero-titel { max-width: 15em; }
+
 /* Buttons */
 .btn {
   display: inline-flex;

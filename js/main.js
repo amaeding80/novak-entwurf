@@ -24,12 +24,16 @@ var MAIL_BETREFF = 'Website-Analyse pavithranovak.net';
 // Buttons im Beispiel sind nur Attrappen
 (function () {
   var hinweis = document.getElementById('demo-hinweis');
+  var texte = {
+    kurse: 'Nur Vorschau: Hier käme man zur Übersicht Ihrer Workshops und Online-Kurse.',
+    anfrage: 'Nur Vorschau: Hier würde sich das Anfrageformular öffnen.'
+  };
   var timer;
   document.querySelectorAll('[data-demo]').forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
       if (!hinweis) return;
-      hinweis.textContent = 'Nur Vorschau: Auf Ihrer Seite würde sich hier die Terminanfrage bzw. der Anruf öffnen.';
+      hinweis.textContent = texte[el.getAttribute('data-demo')] || 'Nur Vorschau.';
       clearTimeout(timer);
       timer = setTimeout(function () { hinweis.textContent = ''; }, 4000);
     });
