@@ -291,6 +291,7 @@ a.kurs { color: var(--text); text-decoration: none; }
   transition: transform .8s ease;
 }
 .kurs-bild img[src*="me-cfs"] { object-position: 75% 60%; }
+.kurs-bild img[src*="resilienz"] { object-position: 55% 40%; } /* Gesicht mittig */
 .kurs:hover .kurs-bild img { transform: scale(1.04); }
 .kurs-datum {
   font-size: .82rem;
@@ -346,43 +347,35 @@ a.kurs { color: var(--text); text-decoration: none; }
 .angebot h3 { font-size: 1.15rem; }
 .angebot p { font-size: .95rem; color: var(--grau); }
 
-/* Über mich - Foto links im Hochformat, Text rechts */
-.ueber {
-  display: grid;
-  grid-template-columns: minmax(260px, 400px) 1fr;
-  gap: 64px;
-  align-items: start;
-}
-.ueber-bild {
+/* Über mich - schmale ruhige Spalte, Bild im Originalformat (4:1), nichts beschnitten */
+.ueber { max-width: 820px; }
+.ueber-banner {
   display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: 20px;
+  aspect-ratio: 920 / 230;
+  border-radius: 18px;
   overflow: hidden;
   background: var(--beige-2);
-  box-shadow: 0 18px 40px -24px rgba(90,50,40,.35);
+  margin-bottom: 36px;
 }
-.ueber-bild img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 22%; /* Kopf + Kinn bleiben drin */
-}
-.ueber-text .mehr-link { margin-bottom: 26px; }
+.ueber-banner img { display: block; width: 100%; height: 100%; }
+.quali-titel { font-size: 1.1rem; margin-bottom: 12px; }
 .unterschrift {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.2rem;
   color: var(--bordeaux);
 }
+.unterschrift + .quali-titel { margin-top: 30px; }
 .quali {
-  background: var(--beige-hell);
-  border-radius: 18px;
-  padding: 26px 28px 18px;
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+  font-size: .94rem;
+  color: var(--grau);
 }
-.quali ul { list-style: none; margin: 0; padding: 0; }
-.quali li { margin-bottom: 10px; font-size: .96rem; }
 
 /* Therablog */
 .blog-liste {
@@ -529,6 +522,7 @@ a.kurs { color: var(--text); text-decoration: none; }
 }
 .kurs-kopfbild img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .kurs-kopfbild img[src*="me-cfs"] { object-position: 75% 60%; }
+.kurs-kopfbild img[src*="resilienz"] { object-position: 55% 40%; }
 .kurs-seite .kurs-datum { display: block; margin-bottom: 8px; }
 .kurs-titel { font-size: clamp(1.9rem, 3.6vw, 2.8rem); letter-spacing: -.02em; margin-bottom: 12px; }
 .kurs-h2 { font-size: 1.4rem; margin: 34px 0 14px; }
@@ -704,11 +698,10 @@ a.kurs { color: var(--text); text-decoration: none; }
 
   .angebote { grid-template-columns: 1fr; gap: 14px; }
   .kontakt { grid-template-columns: 1fr; gap: 32px; }
-  .ueber { grid-template-columns: 300px 1fr; gap: 40px; }
 }
 
 @media (max-width: 720px) {
-  .kurs-kopfbild { aspect-ratio: 3 / 1; }
+  .kurs-kopfbild { aspect-ratio: 2 / 1; }
   .fakten { grid-template-columns: 1fr; gap: 2px; padding: 18px; }
   .fakten dd { margin-bottom: 10px; }
   .buchung { padding: 28px 18px 20px; }
@@ -725,21 +718,21 @@ a.kurs { color: var(--text); text-decoration: none; }
 
   .therapie-kopf { grid-template-columns: 1fr; gap: 24px; }
   .willkommen { display: flex; align-items: center; gap: 18px; text-align: left; }
-  .willkommen img { width: 90px; margin: 0; }
+  .willkommen img { flex: none; width: 90px; margin: 0; }
 
   /* Handy: Foto oben, nicht höher als ~420px */
-  .ueber { grid-template-columns: 1fr; gap: 28px; }
-  .ueber-bild { max-width: 336px; max-height: 420px; }
+  .ueber-banner { border-radius: 14px; margin-bottom: 24px; }
   .blog-liste { grid-template-columns: 1fr; }
   .anfrage { padding: 22px 18px 24px; }
   .anfrage .btn { width: 100%; }
-  .quali, .adresse { padding: 22px 20px 14px; }
+  .adresse { padding: 22px 20px 14px; }
+  .quali { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
   .kurs { display: flex; padding: 10px 10px 16px; }
   .kurs > *:not(.kurs-bild) { margin-left: 8px; margin-right: 8px; }
-  .kurs-bild { aspect-ratio: 3 / 1; min-height: 0; margin-bottom: 12px; }
+  .kurs-bild { aspect-ratio: 2 / 1; min-height: 0; margin-bottom: 12px; } /* 3:1 war zu flach */
 }
 
 /* Nachtrag: ganz kleine Handys */
@@ -756,7 +749,6 @@ a.kurs { color: var(--text); text-decoration: none; }
   .menue { max-height: none; }
   .hero { grid-template-columns: 1.3fr .7fr; }
   .foto { max-width: 220px; }
-  .ueber { grid-template-columns: 200px 1fr; gap: 28px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

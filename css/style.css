@@ -566,6 +566,7 @@ section[id] { scroll-margin-top: 64px; }
   transition: transform .8s ease;
 }
 .demo-bild img[src*="me-cfs"] { object-position: 75% 60%; } /* Sonne mit drin */
+.demo-bild img[src*="resilienz"] { object-position: 55% 40%; }
 .demo-kachel:hover .demo-bild img { transform: scale(1.04); }
 .demo-datum {
   font-size: .82rem;
@@ -898,7 +899,7 @@ section[id] { scroll-margin-top: 64px; }
 @media (max-width: 480px) {
   .demo-kachel { display: flex; padding: 10px 10px 16px; }
   .demo-kachel > *:not(.demo-bild) { margin: 0 8px; }
-  .demo-bild { aspect-ratio: 3 / 1; min-height: 0; margin-bottom: 12px; }
+  .demo-bild { aspect-ratio: 2 / 1; min-height: 0; margin-bottom: 12px; } /* Nachtrag: 3:1 wirkte gequetscht */
 }
 
 /* Nachtrag 10.10. - iPhone SE / 320px (alles an einer Stelle) */
