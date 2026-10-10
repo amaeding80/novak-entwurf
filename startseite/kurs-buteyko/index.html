@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Buteyko Online Workshop – Pavithra Novak (Beispiel-Kursseite)</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#a0112f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23a0112f'/%3E%3Ctext x='16' y='21' font-size='14' text-anchor='middle' fill='%23fff' font-family='Georgia'%3EPN%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/seite.css">
+<script>document.documentElement.className += ' js';</script>
+</head>
+<body id="top">
+
+<div class="entwurf-banner">
+  <a href="../../">Beispiel-Kursseite &middot; Entwurf von Alexander Mäding &ndash; zur Analyse</a>
+</div>
+
+<header class="kopf">
+  <div class="wrap kopf-inner">
+    <a class="logo" href="../">
+      <span class="logo-name">Pavithra Novak</span>
+      <span class="logo-sub">Dipl.-Psychologin</span>
+    </a>
+    <button class="burger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="hauptmenue"><span></span><span></span><span></span></button>
+    <nav class="menue" id="hauptmenue" aria-label="Hauptmenü">
+      <a href="../">Home</a>
+      <a href="../#kurse">Resilienz-Kurs</a>
+      <a href="../#therapie">Therapie</a>
+      <a href="../#therapie">Somatic Experiencing&reg;/NARM&reg;</a>
+      <a href="../#therablog">Therablog</a>
+      <a href="../#kurse" aria-current="page">Buteyko Atmung</a>
+      <a href="#top" data-demo="english">English</a>
+      <a href="../#ueber">Über mich</a>
+      <a href="../#kontakt" class="menue-kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- Eine Vorlage für alle Kurse: ohne Parameter Buteyko, ?kurs=me-cfs / ?kurs=resilienz tauscht die Daten (js/kurs.js) -->
+<section class="kurs-seite">
+  <div class="wrap">
+    <a class="zurueck" href="../#kurse">&larr; Alle Kurse &amp; Workshops</a>
+
+    <div class="kurs-layout">
+      <div class="kurs-inhalt">
+        <picture class="kurs-kopfbild">
+          <source id="k-bild-webp" srcset="../../img/buteyko-workshop.webp" type="image/webp">
+          <img id="k-bild" src="../../img/buteyko-workshop.jpg" width="920" height="230" alt="">
+        </picture>
+        <span class="kurs-datum" id="k-start">Start: 4. Januar 2027</span>
+        <h1 class="kurs-titel" id="k-titel">Buteyko Online Workshop</h1>
+        <p class="hero-sub" id="k-sub">5 Abende in einer Kleingruppe von max. 5 TeilnehmerInnen.</p>
+        <p id="k-intro">Ziel des Workshops ist, dass Sie an diesen 5 Abenden alles Wichtige lernen, um die Buteyko Atemmethode korrekt, effektiv und sicher anwenden zu können.</p>
+
+        <h2 class="kurs-h2">Organisatorisches</h2>
+        <dl class="fakten" id="k-fakten">
+          <dt>Format</dt><dd>Online</dd>
+          <dt>Termine</dt><dd>4.1., 11.1., 18.1., 1.2., 15.2.</dd>
+          <dt>Uhrzeit</dt><dd>jeweils 19&ndash;21 Uhr</dd>
+          <dt>Gruppe</dt><dd>max. 5 TeilnehmerInnen</dd>
+        </dl>
+
+        <h2 class="kurs-h2">Inhalte</h2>
+        <ul class="inhalte" id="k-inhalte">
+          <li>Grundlagen der Buteyko-Atemmethode</li>
+          <li>Wahrnehmung und Analyse des eigenen Atemmusters</li>
+          <li>Praktische Atemübungen zur Beruhigung der Atmung</li>
+          <li>Integration der Übungen in den Alltag</li>
+        </ul>
+        <p class="klein" id="k-hinweis" hidden></p>
+      </div>
+
+      <!-- Buchung - 3 Schritte, alles nur Vorschau -->
+      <aside class="buchung" aria-label="Platz buchen (Beispiel)">
+        <span class="beispiel-label">Beispiel</span>
+
+        <form class="buchung-schritt" id="schritt-1" action="#" novalidate>
+          <h2 class="buchung-titel">Platz buchen</h2>
+          <dl class="buchung-kurz">
+            <dt>Start</dt><dd class="js-start">4. Januar 2027</dd>
+            <dt>Preis</dt><dd>Preis lt. Kursseite</dd>
+          </dl>
+          <div class="feld">
+            <label for="b-name">Name</label>
+            <input id="b-name" type="text" autocomplete="name">
+          </div>
+          <div class="feld">
+            <label for="b-mail">E-Mail</label>
+            <input id="b-mail" type="email" autocomplete="email">
+          </div>
+          <fieldset class="zahlart">
+            <legend>Bezahlung</legend>
+            <label><input type="radio" name="zahlung" value="online" checked> Online bezahlen</label>
+            <label><input type="radio" name="zahlung" value="ueberweisung"> Per Überweisung</label>
+          </fieldset>
+          <button class="btn btn-primaer" type="submit">Weiter zur Übersicht</button>
+          <p class="buchung-warte">Kurs schon voll? <a href="../#kontakt">Auf die Warteliste &rarr;</a></p>
+        </form>
+
+        <div class="buchung-schritt" id="schritt-2" hidden>
+          <h2 class="buchung-titel">Ihre Buchung</h2>
+          <dl class="buchung-kurz">
+            <dt>Kurs</dt><dd class="js-titel">Buteyko Online Workshop</dd>
+            <dt>Start</dt><dd class="js-start">4. Januar 2027</dd>
+            <dt>Name</dt><dd id="z-name">&ndash;</dd>
+            <dt>Bezahlung</dt><dd id="z-zahlung">Online</dd>
+            <dt>Preis</dt><dd>Preis lt. Kursseite</dd>
+          </dl>
+          <button class="btn btn-primaer" type="button" id="b-buchen">Zahlungspflichtig buchen</button>
+          <button class="btn-text" type="button" id="b-zurueck">&larr; Angaben ändern</button>
+        </div>
+
+        <div class="buchung-schritt" id="schritt-3" hidden tabindex="-1">
+          <h2 class="buchung-titel">So sähe die Bestätigung aus</h2>
+          <p id="z-danke">Vielen Dank! Ihr Platz im Buteyko Online Workshop ist gebucht. Eine Bestätigung mit allen Terminen kommt automatisch per E-Mail.</p>
+          <p class="klein" id="z-extra" hidden></p>
+          <p class="buchung-nix">Nur Vorschau: Es wurde nichts gebucht und nichts bezahlt.</p>
+          <button class="btn-text" type="button" id="b-neu">&larr; Noch mal ansehen</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="fuss">
+  <div class="wrap fuss-inner">
+    <span>&copy; Pavithra Novak</span>
+    <nav aria-label="Rechtliches">
+      <a href="#top" data-demo="recht">Impressum</a>
+      <a href="#top" data-demo="recht">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<p class="hinweis" id="hinweis" role="status" aria-live="polite"></p>
+
+<script src="../js/seite.js"></script>
+<script src="../js/kurs.js"></script>
+</body>
+</html>

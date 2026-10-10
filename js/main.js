@@ -26,7 +26,7 @@ var MAIL_BETREFF = 'Website-Analyse pavithranovak.net';
   var hinweis = document.getElementById('demo-hinweis');
   var texte = {
     kurse: 'Nur Vorschau: Hier käme man zur Übersicht Ihrer Workshops und Online-Kurse.',
-    anfrage: 'Nur Vorschau: Hier würde sich das Anfrageformular öffnen.',
+    anfrage: 'Nur Vorschau: Hier käme man zum Anfrage-Formular, „Warteliste Einzelsitzung“ schon ausgewählt.',
     menu: 'Nur Vorschau: Hier würde sich das Menü öffnen.'
   };
   var timer;

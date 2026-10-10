@@ -222,6 +222,7 @@ section[id] { scroll-margin-top: 76px; }
   font-weight: 500;
   text-decoration: none;
   border: 2px solid transparent;
+  text-align: center;
   transition: background .2s, color .2s, transform .2s;
 }
 .btn:hover { transform: translateY(-1px); }
@@ -272,6 +273,7 @@ a.mehr-link:hover { text-decoration: underline; }
   transition: transform .4s ease;
 }
 .kurs:hover { transform: translateY(-3px); }
+a.kurs { color: var(--text); text-decoration: none; }
 .kurs > *:not(.kurs-bild) { margin-left: 10px; margin-right: 10px; }
 .kurs-bild {
   display: block;
@@ -501,6 +503,119 @@ a.mehr-link:hover { text-decoration: underline; }
 }
 .fuss nav a:hover { color: var(--bordeaux); }
 
+/* ---------- Beispiel-Kursseite ---------- */
+.kurs-seite { padding: 28px 0 clamp(56px, 8vw, 96px); background: linear-gradient(180deg, var(--beige-hell), var(--weiss) 420px); }
+.zurueck {
+  display: inline-block;
+  padding: 12px 0;
+  margin-bottom: 12px;
+  font-size: .92rem;
+  text-decoration: none;
+}
+.zurueck:hover { text-decoration: underline; }
+.kurs-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  align-items: start;
+}
+.kurs-kopfbild {
+  display: block;
+  aspect-ratio: 4 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--beige-2);
+  margin-bottom: 24px;
+}
+.kurs-kopfbild img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.kurs-kopfbild img[src*="me-cfs"] { object-position: 75% 60%; }
+.kurs-seite .kurs-datum { display: block; margin-bottom: 8px; }
+.kurs-titel { font-size: clamp(1.9rem, 3.6vw, 2.8rem); letter-spacing: -.02em; margin-bottom: 12px; }
+.kurs-h2 { font-size: 1.4rem; margin: 34px 0 14px; }
+.fakten {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 24px;
+  margin: 0;
+  padding: 22px 24px;
+  background: var(--beige-hell);
+  border-radius: 18px;
+}
+.fakten dt { color: var(--grau); font-size: .92rem; }
+.fakten dd { margin: 0; }
+.inhalte { margin: 0 0 20px; padding-left: 0; list-style: none; }
+.inhalte li { position: relative; padding-left: 22px; margin-bottom: 10px; }
+.inhalte li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .45em;
+  width: 9px;
+  height: 5px;
+  border-left: 1.5px solid var(--bordeaux);
+  border-bottom: 1.5px solid var(--bordeaux);
+  transform: rotate(-45deg);
+}
+
+/* Buchungsbox rechts, bleibt beim Scrollen stehen */
+.buchung {
+  position: sticky;
+  top: 96px;
+  background: #fff;
+  border: 1px solid var(--linie);
+  border-radius: 20px;
+  padding: 30px 26px 24px;
+  box-shadow: var(--schatten);
+}
+.beispiel-label {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  padding: 3px 12px;
+  border-radius: 20px;
+  background: var(--text);
+  color: #fff;
+  font-size: .75rem;
+  letter-spacing: .04em;
+}
+.buchung-titel { font-size: 1.35rem; margin-bottom: 14px; }
+.buchung-kurz {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 14px;
+  margin: 0 0 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--linie);
+  font-size: .94rem;
+}
+.buchung-kurz dt { color: var(--grau); }
+.buchung-kurz dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.zahlart { border: 0; margin: 0 0 18px; padding: 0; }
+.zahlart legend { font-size: .88rem; font-weight: 600; margin-bottom: 6px; padding: 0; }
+.zahlart label { display: flex; align-items: center; gap: 10px; min-height: 40px; cursor: pointer; }
+.zahlart input { width: 18px; height: 18px; accent-color: var(--bordeaux); }
+.buchung .btn { width: 100%; border: 0; cursor: pointer; font-family: inherit; }
+.btn-text {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-size: .9rem;
+  color: var(--bordeaux);
+  cursor: pointer;
+}
+.buchung-warte { margin: 14px 0 0; font-size: .88rem; color: var(--grau); text-align: center; }
+.buchung-warte a { display: inline-block; padding: 8px 0; font-weight: 600; text-decoration: none; }
+.buchung-nix {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--beige);
+  font-size: .88rem;
+}
+.buchung-schritt:focus { outline: none; }
+
 /* Hinweis bei Klick auf Attrappen */
 .hinweis {
   position: fixed;
@@ -572,6 +687,8 @@ a.mehr-link:hover { text-decoration: underline; }
 }
 
 @media (max-width: 960px) {
+  .kurs-layout { grid-template-columns: 1fr; gap: 40px; }
+  .buchung { position: static; max-width: 520px; }
   .kurse { grid-template-columns: 1fr; gap: 18px; }
   .kurs {
     display: grid;
@@ -591,6 +708,10 @@ a.mehr-link:hover { text-decoration: underline; }
 }
 
 @media (max-width: 720px) {
+  .kurs-kopfbild { aspect-ratio: 3 / 1; }
+  .fakten { grid-template-columns: 1fr; gap: 2px; padding: 18px; }
+  .fakten dd { margin-bottom: 10px; }
+  .buchung { padding: 28px 18px 20px; }
   body { font-size: 16px; }
   .wrap { padding: 0 18px; }
   .kopf-inner { min-height: 64px; }

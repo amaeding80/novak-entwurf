@@ -304,6 +304,91 @@ section[id] { scroll-margin-top: 64px; }
 .kachel h3 { color: var(--bordeaux); font-size: 1.3rem; }
 .kachel p { color: var(--grau); font-size: .97rem; }
 
+/* Ausblick Buchung + kleines Mockup */
+.ausblick {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 56px;
+  padding: 40px;
+  background: var(--beige-hell);
+  border-radius: var(--radius);
+}
+.ausblick h3 { font-size: 1.55rem; }
+.ausblick-liste { list-style: none; margin: 0 0 18px; padding: 0; }
+.ausblick-liste li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  color: var(--grau);
+}
+.ausblick-liste li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .5em;
+  width: 9px;
+  height: 5px;
+  border-left: 1.5px solid var(--bordeaux);
+  border-bottom: 1.5px solid var(--bordeaux);
+  transform: rotate(-45deg);
+}
+.ausblick-liste b { color: var(--text); font-weight: 600; }
+.ausblick-hinweis { font-size: .85rem; color: var(--grau); }
+.ausblick .btn { white-space: normal; text-align: center; }
+
+.mock {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  font-size: .88rem;
+}
+.mock-label {
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  z-index: 1;
+  padding: 3px 12px;
+  border-radius: 20px;
+  background: var(--text);
+  color: #fff;
+  font-size: .75rem;
+  letter-spacing: .04em;
+}
+.mock-kurs, .mock-kasse {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: var(--schatten);
+  padding: 10px 10px 16px;
+}
+.mock-kurs > *:not(.mock-bild) { display: block; margin: 0 8px; }
+.mock-bild { display: block; aspect-ratio: 3 / 1; border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+.mock-bild img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mock-datum { color: var(--bordeaux); font-weight: 600; font-size: .8rem; }
+.mock-titel { font-family: var(--serif); font-weight: normal; font-size: 1.15rem; margin: 2px 0 2px; }
+.mock-info { color: var(--grau); margin-bottom: 10px !important; }
+.mock-btn {
+  display: inline-block !important;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: var(--bordeaux);
+  color: #fff;
+  font-weight: 600;
+  font-size: .85rem;
+}
+.mock-kasse { padding: 16px 18px 18px; }
+.mock-kasse-titel { display: block; font-family: var(--serif); font-weight: normal; font-size: 1.05rem; margin-bottom: 8px; }
+.mock-kasse dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 14px;
+  margin: 0 0 14px;
+}
+.mock-kasse dt { color: var(--grau); }
+.mock-kasse dd { margin: 0; text-align: right; }
+.mock-btn-voll { display: block !important; text-align: center; }
+
 /* ---------- Beispiel - Browserfenster ---------- */
 .browser {
   border-radius: 26px;
@@ -702,6 +787,8 @@ section[id] { scroll-margin-top: 64px; }
 }
 
 @media (max-width: 960px) {
+  .ausblick { grid-template-columns: 1fr; gap: 36px; padding: 32px 24px; }
+  .mock { max-width: 460px; }
   .hero { padding: 40px 28px; gap: 24px; }
   .demo-nav { padding: 20px 28px; }
   .demo-menu { gap: 16px; font-size: .85rem; }
@@ -749,6 +836,8 @@ section[id] { scroll-margin-top: 64px; }
 
 /* Handy hoch */
 @media (max-width: 720px) {
+  .ausblick { padding: 28px 18px; margin-top: 40px; }
+  .ausblick .btn { width: 100%; }
   body { font-size: 16px; }
   .wrap { padding: 0 18px; }
   .hide-sm { display: none; }

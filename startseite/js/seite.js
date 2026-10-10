@@ -22,7 +22,6 @@
 (function () {
   var hinweis = document.getElementById('hinweis');
   var texte = {
-    kurs: 'Nur Vorschau: Hier käme man zur Kursseite mit Anmeldung.',
     seite: 'Nur Vorschau: Hier käme man zur passenden Unterseite.',
     english: 'Nur Vorschau: Hier käme die englische Seite.',
     video: 'Nur Vorschau: Das Video käme auf der Therablog-Seite.',
