@@ -649,3 +649,29 @@ h1, h2, h3, .hero-titel { overflow-wrap: break-word; hyphens: auto; }
   .demo-warteliste { padding: 0 18px 24px; }
   .hero-btns .btn { white-space: normal; text-align: center; }
 }
+
+/* echte Bilder statt Platzhalter */
+.bogen { overflow: hidden; background: var(--rose); }
+.bogen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+.demo-bild {
+  display: block;
+  margin: 0 0 14px;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 3 / 1;
+  background: var(--beige-2);
+}
+.demo-bild img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.demo-kachel { border-top: 0; padding-top: 0; }
+.demo-kachel h4 { border-top: 2px solid var(--bordeaux); padding-top: 10px; }
