@@ -105,3 +105,37 @@ a:hover { color: var(--bordeaux-dunkel); }
 }
 .footer p { margin: 0 0 .5em; }
 .footer-klein { font-size: .8rem; opacity: .75; }
+
+/* Abschnitte allgemein */
+.abschnitt { padding: 80px 0; }
+.abschnitt-hell { background: #fff; }
+.abschnitt-rose { background: var(--rose); }
+.abschnitt-text {
+  max-width: 640px;
+  color: var(--grau);
+  margin-bottom: 36px;
+}
+
+.gut-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 40px;
+}
+.gut-liste li {
+  position: relative;
+  padding-left: 30px;
+}
+.gut-liste li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .45em;
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--bordeaux);
+  border-bottom: 2px solid var(--bordeaux);
+  transform: rotate(-45deg);
+}
