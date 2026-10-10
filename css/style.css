@@ -1079,3 +1079,6 @@ h1 em, h2 em, .hero-titel em { font-style: italic; color: var(--bordeaux); }
   body { padding-bottom: calc(66px + env(safe-area-inset-bottom)); }
   .footer { padding-bottom: 40px; }
 }
+
+/* Anker nicht unter der Kopfzeile verstecken */
+section[id] { scroll-margin-top: 64px; }
