@@ -139,3 +139,79 @@ a:hover { color: var(--bordeaux-dunkel); }
   border-bottom: 2px solid var(--bordeaux);
   transform: rotate(-45deg);
 }
+
+/* Analyse Punkte */
+#analyse { background: var(--beige); }
+
+.punkte {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.punkt {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  padding: 28px 30px 16px 24px;
+}
+.punkt h3 { margin-top: 6px; }
+.punkt-nr {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--rose);
+  color: var(--bordeaux);
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vorschlag {
+  background: var(--beige);
+  border-left: 3px solid var(--bordeaux);
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+}
+.hinweis {
+  font-size: .85rem;
+  color: var(--grau);
+  font-style: italic;
+}
+
+/* Balken Ladezeit */
+.balken {
+  height: 10px;
+  background: var(--beige-2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 4px 0 18px;
+  max-width: 420px;
+}
+.balken-wert {
+  display: block;
+  height: 100%;
+  width: var(--wert);
+  background: #d98b2b;
+  border-radius: 10px;
+}
+
+/* Kacheln Angebot */
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.kachel {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 26px 24px 10px;
+}
+.kachel h3 {
+  color: var(--bordeaux);
+  font-size: 1.2rem;
+}
+.kachel p { color: var(--grau); font-size: .97rem; }
