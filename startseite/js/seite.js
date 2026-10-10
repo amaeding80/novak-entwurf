@@ -69,6 +69,31 @@
   });
 })();
 
+// Kurse auf dem Handy wischen - Hinweis unten umschalten, auch klickbar
+(function () {
+  var liste = document.getElementById('kurse-liste');
+  var btn = document.querySelector('.wisch-hinweis');
+  if (!liste || !btn) return;
+  function amEnde() {
+    return liste.scrollLeft + liste.clientWidth >= liste.scrollWidth - 8;
+  }
+  function update() {
+    btn.textContent = amEnde() ? '\u2190 zurück' : 'nach rechts wischen \u2192';
+  }
+  var t;
+  liste.addEventListener('scroll', function () {
+    clearTimeout(t);
+    t = setTimeout(update, 80);
+  }, { passive: true });
+  btn.addEventListener('click', function () {
+    var karte = liste.querySelector('.kurs');
+    var schritt = karte ? karte.getBoundingClientRect().width + 14 : liste.clientWidth;
+    if (amEnde()) liste.scrollTo({ left: 0, behavior: 'smooth' });
+    else liste.scrollBy({ left: schritt, behavior: 'smooth' });
+  });
+  update();
+})();
+
 // Einblenden beim Scrollen
 (function () {
   var els = document.querySelectorAll('.reveal');

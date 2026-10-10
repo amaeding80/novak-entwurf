@@ -71,7 +71,7 @@
 <section class="abschnitt abschnitt-kurse" id="kurse">
   <div class="wrap">
     <h2 class="reveal">Kurse &amp; Workshops</h2>
-    <div class="kurse">
+    <div class="kurse" id="kurse-liste" role="region" aria-label="Kurse und Workshops, auf dem Handy seitlich wischen" tabindex="0">
       <a class="kurs reveal" href="kurs-buteyko/?kurs=me-cfs">
         <picture class="kurs-bild">
           <source srcset="../img/buteyko-me-cfs.webp" type="image/webp">
@@ -103,6 +103,8 @@
         <span class="mehr-link">Platz buchen &rarr;</span>
       </a>
     </div>
+    <!-- nur Handy: Hinweis zum Wischen, per JS umgeschaltet -->
+    <button class="wisch-hinweis" type="button" aria-controls="kurse-liste">nach rechts wischen &rarr;</button>
     <p class="warteliste reveal">Einzelsitzungen: Gerne trage ich Sie auf meiner Warteliste ein. <a class="mehr-link" href="#kontakt" data-anliegen="Warteliste Einzelsitzung">Auf die Warteliste &rarr;</a></p>
   </div>
 </section>
