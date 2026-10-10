@@ -116,7 +116,7 @@
         </div>
 
         <!-- TODO evtl. noch Animation für Kacheln -->
-        <div class="demo-kacheln">
+        <div class="demo-kacheln wisch-liste" id="demo-kurse-liste" role="region" aria-label="Kurse und Workshops, auf dem Handy seitlich wischen" tabindex="0">
           <div class="demo-kachel" data-demo="kurse" role="link" tabindex="0">
             <picture class="demo-bild">
               <source srcset="img/buteyko-me-cfs.webp" type="image/webp">
@@ -148,6 +148,8 @@
             <span class="demo-link">Platz anfragen &rarr;</span>
           </div>
         </div>
+        <!-- wie auf der Startseite: nur Handy, per JS umgeschaltet -->
+        <button class="wisch-hinweis" type="button" aria-controls="demo-kurse-liste">nach rechts wischen &rarr;</button>
         <p class="demo-warteliste">Einzelsitzungen: Gerne trage ich Sie auf meiner Warteliste ein. <a class="demo-link" href="#beispiel" data-demo="anfrage">Auf die Warteliste &rarr;</a></p>
       </div>
     </div>

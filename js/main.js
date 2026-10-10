@@ -50,6 +50,30 @@ var MAIL_BETREFF = 'Website-Analyse pavithranovak.net';
   });
 })();
 
+// Wisch-Leiste im Beispiel (Handy) - gleiche Logik wie startseite/js/seite.js
+document.querySelectorAll('.wisch-hinweis').forEach(function (btn) {
+  var liste = document.getElementById(btn.getAttribute('aria-controls'));
+  if (!liste) return;
+  function amEnde() {
+    return liste.scrollLeft + liste.clientWidth >= liste.scrollWidth - 8;
+  }
+  function update() {
+    btn.textContent = amEnde() ? '\u2190 zurück' : 'nach rechts wischen \u2192';
+  }
+  var t;
+  liste.addEventListener('scroll', function () {
+    clearTimeout(t);
+    t = setTimeout(update, 80);
+  }, { passive: true });
+  btn.addEventListener('click', function () {
+    var karte = liste.firstElementChild;
+    var schritt = karte ? karte.getBoundingClientRect().width + 14 : liste.clientWidth;
+    if (amEnde()) liste.scrollTo({ left: 0, behavior: 'smooth' });
+    else liste.scrollBy({ left: schritt, behavior: 'smooth' });
+  });
+  update();
+});
+
 // Einblenden beim Scrollen
 (function () {
   var els = document.querySelectorAll('.reveal');
