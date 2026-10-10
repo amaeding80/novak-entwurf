@@ -103,7 +103,7 @@
         <span class="mehr-link">Platz anfragen &rarr;</span>
       </div>
     </div>
-    <p class="warteliste reveal">Einzelsitzungen: Gerne trage ich Sie auf meiner Warteliste ein. <a class="mehr-link" href="#kontakt">Auf die Warteliste &rarr;</a></p>
+    <p class="warteliste reveal">Einzelsitzungen: Gerne trage ich Sie auf meiner Warteliste ein. <a class="mehr-link" href="#kontakt" data-anliegen="Warteliste Einzelsitzung">Auf die Warteliste &rarr;</a></p>
   </div>
 </section>
 
@@ -186,25 +186,46 @@
   </div>
 </section>
 
-<!-- Kontakt - ihre echten Daten, Links hier nur Vorschau -->
+<!-- Kontakt - Anfrage statt Telefon. Formular ist nur Attrappe, verschickt nichts -->
 <section class="abschnitt abschnitt-kontakt" id="kontakt">
   <div class="wrap kontakt">
-    <div>
+    <div class="kontakt-info">
       <h2 class="reveal">Kontakt</h2>
       <p class="reveal">Haben Sie Fragen, Wünsche oder Anregungen? Bitte nehmen Sie Kontakt mit mir auf, ich helfe Ihnen gerne weiter!</p>
-      <div class="kontakt-btns reveal">
-        <a href="#kontakt" class="btn btn-primaer" data-demo="mail">E-Mail schreiben</a>
-        <a href="#kontakt" class="btn btn-rahmen" data-demo="tel">Anrufen</a>
-      </div>
-      <p class="klein reveal">Bitte schreiben Sie keine vertraulichen Informationen, insbesondere Gesundheitsdaten in eine E-Mail, sondern nutzen Sie diese nur zur ersten Kontaktaufnahme.</p>
+      <address class="adresse reveal">
+        <strong>Pavithra Novak</strong><br>
+        Wormser Landstr. 17<br>
+        67346 Speyer<br>
+        <span class="adresse-zeile">E-Mail: <a href="#kontakt" data-demo="mail">info@pavithranovak.net</a></span>
+      </address>
     </div>
-    <address class="adresse reveal">
-      <strong>Pavithra Novak</strong><br>
-      Wormser Landstr. 17<br>
-      67346 Speyer<br>
-      <span class="adresse-zeile">Tel. <a href="#kontakt" data-demo="tel">06232 - 312 50 55</a></span>
-      <span class="adresse-zeile">E-Mail: <a href="#kontakt" data-demo="mail">info@pavithranovak.net</a></span>
-    </address>
+
+    <form class="anfrage reveal" id="anfrage-form" action="#kontakt" novalidate>
+      <h3>Anfrage schreiben</h3>
+      <div class="feld">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name">
+      </div>
+      <div class="feld">
+        <label for="f-mail">E-Mail</label>
+        <input id="f-mail" name="email" type="email" autocomplete="email">
+      </div>
+      <div class="feld">
+        <label for="f-anliegen">Anliegen</label>
+        <select id="f-anliegen" name="anliegen">
+          <option>Kursanmeldung</option>
+          <option>Warteliste Einzelsitzung</option>
+          <option>Paarsitzung</option>
+          <option>Sonstiges</option>
+        </select>
+      </div>
+      <div class="feld">
+        <label for="f-text">Nachricht</label>
+        <textarea id="f-text" name="nachricht" rows="5"></textarea>
+      </div>
+      <p class="klein">Bitte schreiben Sie keine vertraulichen Informationen, insbesondere Gesundheitsdaten in eine E-Mail, sondern nutzen Sie diese nur zur ersten Kontaktaufnahme.</p>
+      <button class="btn btn-primaer" type="submit">Anfrage senden</button>
+    </form>
   </div>
 </section>
 

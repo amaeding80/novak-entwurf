@@ -27,7 +27,6 @@
     english: 'Nur Vorschau: Hier käme die englische Seite.',
     video: 'Nur Vorschau: Das Video käme auf der Therablog-Seite.',
     mail: 'Nur Vorschau: Hier würde sich Ihr E-Mail-Programm öffnen.',
-    tel: 'Nur Vorschau: Auf dem Handy würde hier der Anruf starten.',
     recht: 'Nur Vorschau: Hier käme Ihr Impressum bzw. die Datenschutzerklärung.'
   };
   var timer;
@@ -47,6 +46,27 @@
     el.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && el.tagName !== 'A') { e.preventDefault(); zeigen(el); }
     });
+  });
+})();
+
+// Formular nur Vorschau - nichts wird gesendet
+(function () {
+  var form = document.getElementById('anfrage-form');
+  var hinweis = document.getElementById('hinweis');
+  if (!form) return;
+  // Nachtrag: Warteliste-Link wählt das Anliegen gleich vor
+  document.querySelectorAll('[data-anliegen]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      form.querySelector('select').value = a.getAttribute('data-anliegen');
+    });
+  });
+  var timer;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    hinweis.textContent = 'Nur Vorschau: Die Anfrage wird hier nicht verschickt.';
+    hinweis.classList.add('an');
+    clearTimeout(timer);
+    timer = setTimeout(function () { hinweis.classList.remove('an'); }, 3500);
   });
 })();
 
