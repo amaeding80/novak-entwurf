@@ -511,6 +511,16 @@ section[id] { scroll-margin-top: 64px; }
   transform: rotate(-45deg);
 }
 
+/* kleines rundes Foto - nur Handy */
+.hero-mini { display: none; }
+.hero-mini img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 28%; /* Gesicht mittig */
+}
+
 /* Foto - schlicht, leicht gerundet */
 .hero-bild { display: flex; justify-content: center; }
 .bogen {
@@ -863,6 +873,20 @@ section[id] { scroll-margin-top: 64px; }
   .hero-btns .btn { flex: 1 1 auto; white-space: normal; text-align: center; }
   /* Foto kleiner, damit es früher kommt */
   .bogen { width: 100%; max-width: 220px; aspect-ratio: 4 / 5; border-radius: 16px; }
+  /* großes Foto weg, dafür klein + rund oben neben der Ortszeile */
+  .hero-bild { display: none; }
+  .hero-kopf { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .hero-kopf .hero-ort { margin: 0; font-size: .9rem; line-height: 1.4; }
+  .hero-mini {
+    display: block;
+    flex: none;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--beige-2);
+    box-shadow: 0 8px 22px -10px rgba(90,50,40,.45);
+  }
 
   .demo-kacheln { padding: 28px 18px; }
   .demo-warteliste { padding: 0 18px 24px; }
@@ -919,7 +943,6 @@ section[id] { scroll-margin-top: 64px; }
   section[id] { scroll-margin-top: 0; }
   .wrap { padding-right: 72px; }
   .intro { padding: 40px 0; }
-  .bogen { max-width: 220px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
