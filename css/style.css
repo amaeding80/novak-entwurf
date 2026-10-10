@@ -961,3 +961,20 @@ h1 em, h2 em, .hero-titel em { font-style: italic; color: var(--bordeaux); }
   .topnav a { margin-left: 8px; font-size: .78rem; }
   .wrap { padding: 0 14px; }
 }
+
+/* Nachtrag: Foto natürlicher - kein Bogen, keine Formen mehr dahinter */
+.hero { background: linear-gradient(180deg, #fbf6f0 0%, var(--beige) 100%); }
+.hero::before { display: none; animation: none; }
+.kreis { display: none; }
+.bogen {
+  width: 86%;
+  max-width: 340px;
+  aspect-ratio: 5 / 6.6;
+  border-radius: 20px;
+  background: var(--beige-2);
+  box-shadow: 0 18px 40px -24px rgba(90,50,40,.35);
+}
+.bogen img { object-position: 50% 30%; }
+@media (max-width: 720px) {
+  .bogen { width: 78%; border-radius: 16px; }
+}
