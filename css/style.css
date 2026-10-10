@@ -508,6 +508,10 @@ section[id] { scroll-margin-top: 64px; }
 .demo-warteliste .demo-link { padding: 12px 0; margin-left: 6px; }
 .demo-warteliste .demo-link:hover { text-decoration: underline; }
 
+/* Link zur kompletten Startseite unter dem Beispiel */
+.beispiel-mehr { margin: 28px 0 0; text-align: center; }
+.beispiel-mehr .btn { white-space: normal; text-align: center; }
+
 /* Hinweis bei Klick im Beispiel - als Toast unten */
 .demo-hinweis {
   position: fixed;
