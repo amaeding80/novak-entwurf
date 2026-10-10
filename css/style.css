@@ -1,0 +1,107 @@
+/* Entwurf Novak - Analyse-Seite */
+
+:root {
+  --bordeaux: #a0112f;
+  --bordeaux-dunkel: #8a0f28;
+  --rose: #f8ecee;
+  --beige: #faf7f2;
+  --beige-2: #f0e9e1;
+  --text: #2b2326;
+  --grau: #6b6064;
+  --linie: #e6dcd2;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background: #fff;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0 0 .6em;
+}
+h1 { font-size: 2.6rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.3rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--bordeaux); }
+a:hover { color: var(--bordeaux-dunkel); }
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.wrap.schmal { max-width: 720px; }
+
+/* Kopfzeile */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.92);
+  border-bottom: 1px solid var(--linie);
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.topbar-titel {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+.topnav a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: .95rem;
+}
+.topnav a:hover { color: var(--bordeaux); }
+
+/* Intro */
+.intro {
+  padding: 90px 0 70px;
+  background: var(--beige);
+}
+.kicker {
+  font-size: .85rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+}
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+.weiter {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer {
+  padding: 40px 0 50px;
+  background: #2f2629;
+  color: #d9cfd2;
+  font-size: .9rem;
+}
+.footer p { margin: 0 0 .5em; }
+.footer-klein { font-size: .8rem; opacity: .75; }
