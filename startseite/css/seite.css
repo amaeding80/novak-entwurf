@@ -344,28 +344,30 @@ a.mehr-link:hover { text-decoration: underline; }
 .angebot h3 { font-size: 1.15rem; }
 .angebot p { font-size: .95rem; color: var(--grau); }
 
-/* Über mich */
+/* Über mich - Foto links im Hochformat, Text rechts */
+.ueber {
+  display: grid;
+  grid-template-columns: minmax(260px, 400px) 1fr;
+  gap: 64px;
+  align-items: start;
+}
 .ueber-bild {
   display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 4 / 1;
   background: var(--beige-2);
-  margin-bottom: 44px;
+  box-shadow: 0 18px 40px -24px rgba(90,50,40,.35);
 }
 .ueber-bild img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 40%;
+  object-position: 50% 22%; /* Kopf + Kinn bleiben drin */
 }
-.ueber {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 56px;
-  align-items: start;
-}
+.ueber-text .mehr-link { margin-bottom: 26px; }
 .unterschrift {
   font-family: var(--serif);
   font-style: italic;
@@ -538,7 +540,8 @@ a.mehr-link:hover { text-decoration: underline; }
   .kurs .mehr-link { padding: 10px 0 6px; align-self: end; }
 
   .angebote { grid-template-columns: 1fr; gap: 14px; }
-  .ueber, .kontakt { grid-template-columns: 1fr; gap: 32px; }
+  .kontakt { grid-template-columns: 1fr; gap: 32px; }
+  .ueber { grid-template-columns: 300px 1fr; gap: 40px; }
 }
 
 @media (max-width: 720px) {
@@ -557,8 +560,9 @@ a.mehr-link:hover { text-decoration: underline; }
   .willkommen { display: flex; align-items: center; gap: 18px; text-align: left; }
   .willkommen img { width: 90px; margin: 0; }
 
-  .ueber-bild { aspect-ratio: 5 / 2; margin-bottom: 32px; }
-  .ueber-bild img { object-position: 50% 35%; }
+  /* Handy: Foto oben, nicht höher als ~420px */
+  .ueber { grid-template-columns: 1fr; gap: 28px; }
+  .ueber-bild { max-width: 336px; max-height: 420px; }
   .blog-liste { grid-template-columns: 1fr; }
   .kontakt-btns .btn { flex: 1 1 auto; }
   .quali, .adresse { padding: 22px 20px 14px; }
@@ -584,6 +588,7 @@ a.mehr-link:hover { text-decoration: underline; }
   .menue { max-height: none; }
   .hero { grid-template-columns: 1.3fr .7fr; }
   .foto { max-width: 220px; }
+  .ueber { grid-template-columns: 200px 1fr; gap: 28px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
