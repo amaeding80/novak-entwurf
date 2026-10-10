@@ -959,8 +959,23 @@ section[id] { scroll-margin-top: 64px; }
   .wisch-hinweis:hover { color: var(--bordeaux); }
 }
 
+/* Buttons auf dem Handy immer einzeilig, Text + Pfeil zusammen */
+@media (max-width: 720px) {
+  .btn,
+  .hero-btns .btn,
+  .beispiel-mehr .btn,
+  .ausblick .btn { white-space: nowrap; padding: 12px 18px; font-size: .95rem; }
+  .nur-gross { display: none; } /* "Komplette" fällt mobil weg */
+}
+
 /* Nachtrag 10.10. - iPhone SE / 320px (alles an einer Stelle) */
 @media (max-width: 360px) {
+  .btn,
+  .hero-btns .btn,
+  .beispiel-mehr .btn,
+  .ausblick .btn { padding: 12px 14px; font-size: .88rem; }
+  .demo .hero { padding-left: 14px; padding-right: 14px; }
+  .ausblick { padding-left: 14px; padding-right: 14px; }
   .wrap { padding: 0 14px; }
   h1 { font-size: 1.9rem; }
   .hero-titel { font-size: 1.6rem; }
