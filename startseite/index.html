@@ -71,7 +71,7 @@
 <section class="abschnitt abschnitt-kurse" id="kurse">
   <div class="wrap">
     <h2 class="reveal">Kurse &amp; Workshops</h2>
-    <div class="kurse" id="kurse-liste" role="region" aria-label="Kurse und Workshops, auf dem Handy seitlich wischen" tabindex="0">
+    <div class="kurse wisch-liste" id="kurse-liste" role="region" aria-label="Kurse und Workshops, auf dem Handy seitlich wischen" tabindex="0">
       <a class="kurs reveal" href="kurs-buteyko/?kurs=me-cfs">
         <picture class="kurs-bild">
           <source srcset="../img/buteyko-me-cfs.webp" type="image/webp">
@@ -127,7 +127,7 @@
       </figure>
     </div>
 
-    <div class="angebote">
+    <div class="angebote wisch-liste" id="angebote-liste" role="region" aria-label="Therapie-Angebote, auf dem Handy seitlich wischen" tabindex="0">
       <article class="angebot reveal">
         <h3>Einzel- und Paarsitzungen</h3>
         <p>Die Sitzungen finden nach Absprache entweder in meiner Praxis in Speyer oder im Rahmen flexibler Online-Sessions statt.</p>
@@ -141,6 +141,7 @@
         <p>Neben individuellen Einzelsitzungen vermittle ich diese Methode auch in regelmäßigen Buteyko-Workshops.</p>
       </article>
     </div>
+    <button class="wisch-hinweis" type="button" aria-controls="angebote-liste">nach rechts wischen &rarr;</button>
   </div>
 </section>
 

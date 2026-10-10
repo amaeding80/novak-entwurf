@@ -729,9 +729,9 @@ a.kurs { color: var(--text); text-decoration: none; }
   .adresse { padding: 22px 20px 14px; }
 }
 
-/* Handy: Kurse als Wisch-Leiste, nächste Karte schaut rein */
+/* Handy: Kurse + Therapie-Kacheln als Wisch-Leiste, nächste Karte schaut rein */
 @media (max-width: 720px) {
-  .kurse {
+  .wisch-liste {
     display: flex;
     gap: 14px;
     margin: 24px -18px 0;
@@ -743,11 +743,14 @@ a.kurs { color: var(--text); text-decoration: none; }
     overscroll-behavior-x: contain;
     scrollbar-width: none;
   }
-  .kurse::-webkit-scrollbar { display: none; }
-  .kurse:focus-visible { outline-offset: -3px; }
-  .kurs {
+  .wisch-liste::-webkit-scrollbar { display: none; }
+  .wisch-liste:focus-visible { outline-offset: -3px; }
+  .wisch-liste > * {
     flex: 0 0 85%;
     scroll-snap-align: start;
+  }
+  .angebote { margin-top: 28px; }
+  .kurs {
     display: flex;
     padding: 10px 10px 16px;
   }

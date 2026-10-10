@@ -69,11 +69,10 @@
   });
 })();
 
-// Kurse auf dem Handy wischen - Hinweis unten umschalten, auch klickbar
-(function () {
-  var liste = document.getElementById('kurse-liste');
-  var btn = document.querySelector('.wisch-hinweis');
-  if (!liste || !btn) return;
+// Wisch-Leisten auf dem Handy (Kurse + Therapie) - Hinweis drunter umschalten, auch klickbar
+document.querySelectorAll('.wisch-hinweis').forEach(function (btn) {
+  var liste = document.getElementById(btn.getAttribute('aria-controls'));
+  if (!liste) return;
   function amEnde() {
     return liste.scrollLeft + liste.clientWidth >= liste.scrollWidth - 8;
   }
@@ -86,13 +85,13 @@
     t = setTimeout(update, 80);
   }, { passive: true });
   btn.addEventListener('click', function () {
-    var karte = liste.querySelector('.kurs');
+    var karte = liste.firstElementChild;
     var schritt = karte ? karte.getBoundingClientRect().width + 14 : liste.clientWidth;
     if (amEnde()) liste.scrollTo({ left: 0, behavior: 'smooth' });
     else liste.scrollBy({ left: schritt, behavior: 'smooth' });
   });
   update();
-})();
+});
 
 // Einblenden beim Scrollen
 (function () {
