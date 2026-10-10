@@ -1026,3 +1026,44 @@ h1 em, h2 em, .hero-titel em { font-style: italic; color: var(--bordeaux); }
 .hero-sub { max-width: 30em; }
 .demo-warteliste .demo-link { margin-left: 6px; text-decoration: none; }
 .demo-warteliste .demo-link:hover { text-decoration: underline; }
+
+/* neue Reihenfolge: Beispiel vor Analyse */
+.abschnitt-beispiel { background: var(--beige); }
+#analyse { background: #fffdfb; }
+
+/* Weitere Hinweise zum Aufklappen */
+.weitere-titel {
+  margin: 56px 0 18px;
+  font-size: 1.4rem;
+}
+.weitere {
+  border-top: 1px solid var(--linie);
+}
+.weitere details {
+  border-bottom: 1px solid var(--linie);
+  padding: 0 4px;
+}
+.weitere summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 36px 18px 0;
+  position: relative;
+  font-family: var(--serif);
+  font-size: 1.12rem;
+}
+.weitere summary::-webkit-details-marker { display: none; }
+.weitere summary::after {
+  content: "+";
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--sans);
+  font-size: 1.4rem;
+  color: var(--bordeaux);
+  transition: transform .3s;
+}
+.weitere details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.weitere summary:hover { color: var(--bordeaux); }
+.weitere details > *:not(summary) { max-width: 760px; }
+.weitere details[open] { padding-bottom: 10px; }
