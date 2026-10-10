@@ -718,7 +718,8 @@ a.kurs { color: var(--text); text-decoration: none; }
 
   .therapie-kopf { grid-template-columns: 1fr; gap: 24px; }
   .willkommen { display: flex; align-items: center; gap: 18px; text-align: left; }
-  .willkommen img { flex: none; width: 90px; margin: 0; }
+  .willkommen picture { flex: none; }
+  .willkommen img { width: 90px; margin: 0; }
 
   /* Handy: Foto oben, nicht höher als ~420px */
   .ueber-banner { border-radius: 14px; margin-bottom: 24px; }
