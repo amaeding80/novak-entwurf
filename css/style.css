@@ -215,3 +215,194 @@ a:hover { color: var(--bordeaux-dunkel); }
   font-size: 1.2rem;
 }
 .kachel p { color: var(--grau); font-size: .97rem; }
+
+/* Beispiel - Browserfenster */
+.abschnitt-beispiel { background: #fff; }
+
+.browser {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(60, 20, 30, .12), 0 2px 6px rgba(0,0,0,.05);
+  border: 1px solid var(--linie);
+}
+.browser-leiste {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 16px;
+  background: #f1ece6;
+}
+.browser-leiste > span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #d8cfc6;
+}
+.browser-url {
+  margin-left: 14px;
+  flex: 1;
+  max-width: 340px;
+  background: #fff;
+  border-radius: 6px;
+  font-size: .78rem;
+  color: var(--grau);
+  padding: 3px 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.demo { background: #fffdfb; }
+
+.demo-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #f0e8e0;
+}
+.demo-logo { line-height: 1.2; }
+.demo-logo-name {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--bordeaux);
+}
+.demo-logo-sub {
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--grau);
+}
+.demo-menu {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  font-size: .9rem;
+}
+.demo-menu-kontakt {
+  color: var(--bordeaux);
+  font-weight: 600;
+}
+.demo-burger { display: none; }
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 40px;
+  align-items: center;
+  padding: 64px 40px 56px;
+  background: linear-gradient(180deg, #fffdfb 0%, var(--beige) 100%);
+}
+.hero-ort {
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  margin-bottom: 12px;
+}
+.hero-titel {
+  font-size: 2.5rem;
+  line-height: 1.12;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+.hero-sub {
+  font-size: 1.08rem;
+  color: var(--grau);
+  max-width: 470px;
+}
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 26px 0 24px;
+}
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: .82rem;
+  color: var(--grau);
+  margin: 0;
+}
+.hero-trust span::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bordeaux);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Platzhalter statt Foto */
+.hero-bild {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.bogen {
+  position: relative;
+  z-index: 2;
+  width: 78%;
+  max-width: 300px;
+  aspect-ratio: 3 / 4;
+  border-radius: 200px 200px 18px 18px;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(255,255,255,.75) 0 17%, transparent 17.5%),
+    radial-gradient(ellipse at 50% 100%, rgba(255,255,255,.6) 0 38%, transparent 38.5%),
+    linear-gradient(160deg, var(--rose) 0%, #e9c9d0 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.bogen-text {
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  margin-bottom: 14px;
+}
+.kreis {
+  position: absolute;
+  border-radius: 50%;
+}
+.kreis-1 {
+  width: 130px; height: 130px;
+  background: var(--beige-2);
+  top: 6%; right: 4%;
+}
+.kreis-2 {
+  width: 64px; height: 64px;
+  border: 2px solid var(--bordeaux);
+  opacity: .35;
+  bottom: 10%; left: 6%;
+}
+
+.demo-kacheln {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 34px 40px 40px;
+}
+.demo-kachel {
+  border-top: 2px solid var(--bordeaux);
+  padding-top: 14px;
+}
+.demo-kachel h4 { font-size: 1.15rem; margin-bottom: 6px; }
+.demo-kachel p { font-size: .92rem; color: var(--grau); margin: 0; }
+
+.demo-hinweis {
+  min-height: 1.5em;
+  margin-top: 14px;
+  font-size: .9rem;
+  color: var(--grau);
+  text-align: center;
+}
