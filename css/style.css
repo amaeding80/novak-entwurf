@@ -406,3 +406,81 @@ a:hover { color: var(--bordeaux-dunkel); }
   color: var(--grau);
   text-align: center;
 }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: background .2s, color .2s, transform .2s;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primaer { background: var(--bordeaux); color: #fff; }
+.btn-primaer:hover { background: var(--bordeaux-dunkel); color: #fff; }
+.btn-rahmen { border-color: var(--bordeaux); color: var(--bordeaux); background: transparent; }
+.btn-rahmen:hover { background: var(--rose); }
+
+.btn-wa { background: #1f8f4e; color: #fff; }
+.btn-wa:hover { background: #18773f; color: #fff; }
+.btn-mail { background: var(--bordeaux); color: #fff; }
+.btn-mail:hover { background: var(--bordeaux-dunkel); color: #fff; }
+
+.icon { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid #e2a3b0;
+  outline-offset: 3px;
+}
+
+/* Kontakt */
+.kontakt { background: var(--beige); text-align: center; }
+.kontakt-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 30px 0 18px;
+}
+.kontakt-adresse { color: var(--grau); font-size: .95rem; }
+.signatur {
+  margin-top: 40px;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+}
+
+/* sticky unten rechts */
+.sticky-kontakt {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: opacity .3s, transform .3s;
+}
+.sticky-kontakt a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px 11px 14px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .92rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+}
+.sticky-kontakt.weg {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
