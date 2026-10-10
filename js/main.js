@@ -26,16 +26,26 @@ var MAIL_BETREFF = 'Website-Analyse pavithranovak.net';
   var hinweis = document.getElementById('demo-hinweis');
   var texte = {
     kurse: 'Nur Vorschau: Hier käme man zur Übersicht Ihrer Workshops und Online-Kurse.',
-    anfrage: 'Nur Vorschau: Hier würde sich das Anfrageformular öffnen.'
+    anfrage: 'Nur Vorschau: Hier würde sich das Anfrageformular öffnen.',
+    menu: 'Nur Vorschau: Hier würde sich das Menü öffnen.'
   };
   var timer;
+  function zeigen(el) {
+    if (!hinweis) return;
+    hinweis.textContent = texte[el.getAttribute('data-demo')] || 'Nur Vorschau.';
+    hinweis.classList.add('an');
+    clearTimeout(timer);
+    timer = setTimeout(function () { hinweis.classList.remove('an'); }, 3500);
+  }
   document.querySelectorAll('[data-demo]').forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
-      if (!hinweis) return;
-      hinweis.textContent = texte[el.getAttribute('data-demo')] || 'Nur Vorschau.';
-      clearTimeout(timer);
-      timer = setTimeout(function () { hinweis.textContent = ''; }, 4000);
+      e.stopPropagation(); // sonst feuert die Karte doppelt
+      zeigen(el);
+    });
+    // Karten auch mit Enter
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && el.tagName !== 'A' && el.tagName !== 'BUTTON') { e.preventDefault(); zeigen(el); }
     });
   });
 })();
