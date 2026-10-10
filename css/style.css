@@ -624,3 +624,28 @@ a:focus-visible, button:focus-visible {
   }
   .footer { padding-bottom: 100px; }
 }
+
+/* Nachtrag 10.10. - Fix für iPhone SE / ganz kleine Displays */
+@media (max-width: 360px) {
+  h1 { font-size: 1.75rem; }
+  .hero-titel { font-size: 1.5rem; }
+  .topbar-titel { font-size: .95rem; }
+  .topnav a { margin-left: 10px; font-size: .82rem; }
+  .browser-url { display: none; }
+  .hero-btns { flex-direction: column; }
+}
+
+/* Handy quer - Hero nicht so hoch */
+@media (max-height: 500px) and (orientation: landscape) {
+  .intro { padding: 40px 0; }
+  .hero-bild { min-height: 240px; }
+  .bogen { max-width: 200px; }
+}
+
+/* lange Wörter (Somatic Experiencing etc.) */
+h1, h2, h3, .hero-titel { overflow-wrap: break-word; hyphens: auto; }
+
+@media (max-width: 720px) {
+  .demo-warteliste { padding: 0 18px 24px; }
+  .hero-btns .btn { white-space: normal; text-align: center; }
+}
