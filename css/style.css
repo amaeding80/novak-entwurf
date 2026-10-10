@@ -996,3 +996,33 @@ h1 em, h2 em, .hero-titel em { font-style: italic; color: var(--bordeaux); }
 @media (max-width: 720px) {
   .sticky-kontakt { background: rgba(246,238,229,.96); border-top-color: #e6d8c9; }
 }
+
+/* Qualifikationen als ruhige Zeile statt Pillen */
+.hero-trust {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  font-size: .86rem;
+  color: var(--grau);
+}
+.hero-trust li {
+  position: relative;
+  padding-left: 20px;
+}
+.hero-trust li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .38em;
+  width: 9px;
+  height: 5px;
+  border-left: 1.5px solid var(--bordeaux);
+  border-bottom: 1.5px solid var(--bordeaux);
+  transform: rotate(-45deg);
+}
+.hero-sub { max-width: 30em; }
+.demo-warteliste .demo-link { margin-left: 6px; text-decoration: none; }
+.demo-warteliste .demo-link:hover { text-decoration: underline; }
