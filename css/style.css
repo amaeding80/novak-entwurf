@@ -978,3 +978,21 @@ h1 em, h2 em, .hero-titel em { font-style: italic; color: var(--bordeaux); }
 @media (max-width: 720px) {
   .bogen { width: 78%; border-radius: 16px; }
 }
+
+/* Nachtrag: WhatsApp nicht mehr grün, passend zum Beige */
+:root { --beige: #f6eee5; --beige-2: #ecdfd1; }
+.intro::before { background: #f1e3dc; }
+.btn-wa, .sticky-kontakt .btn-wa {
+  background: var(--beige-2);
+  color: var(--bordeaux);
+  border: 1.5px solid #dcc8b6;
+}
+.btn-wa:hover, .sticky-kontakt .btn-wa:hover {
+  background: #e4d3c1;
+  color: var(--bordeaux-dunkel);
+}
+.btn-wa .icon { fill: currentColor; }
+.kontakt-btns .btn-wa { box-shadow: none; }
+@media (max-width: 720px) {
+  .sticky-kontakt { background: rgba(246,238,229,.96); border-top-color: #e6d8c9; }
+}
